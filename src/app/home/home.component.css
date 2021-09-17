@@ -1,0 +1,84 @@
+#main-bg{
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/bg.jpg);
+    background-size: cover ;
+    background-repeat: no-repeat ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    min-height: 65vh ;
+}
+
+.marge{
+    margin: 30px 0 ;
+}
+
+.main-center{
+    color: #fff ;
+    width: 45% ;
+    text-align: center ;
+}
+
+.main-center h1{
+    font-size: 2.3em ;
+}
+
+.main-center p{
+    font-size: 1.2em ;
+    line-height: 1.5 ;
+}
+
+section{
+    box-sizing: border-box ;
+    padding: 30px 40px ;
+}
+
+.section-titre{
+    font-family: Georgia, Times, serif ;
+    text-align: center ;
+    font-size: 1.7em ;
+    margin: 20px 0 30px 0 ;
+    font-weight: 700 ;
+}
+
+.articles{
+    display: grid ;
+    grid-gap: 1.2em ;
+    grid-template-columns: 24% 24% 24% 24% ;
+    overflow: hidden;
+    padding: 5px 0 ;
+}
+
+@media(max-width:780px){
+    .articles{
+        grid-template-columns: 100% ;
+    }
+}
+
+.modele-article .image-conteneur{
+    display: block ;
+    width: 100% ;
+    position: relative ;
+    overflow: hidden;
+    height: 0;
+    padding-top: 100% ;
+}
+
+.image-conteneur .image-mask{
+    position: absolute;
+    top: 0;
+    left:0 ;
+    height: 100%;
+    width: 100%;
+}
+
+.modele-article .image-conteneur img{
+    width: 100% ;
+    object-fit: cover ;
+    min-width: 100%;
+    min-height: 100% ;
+    transition: 1s transform ;
+}
+
+.modele-article .image-conteneur:hover img{
+    transform: scale(1.1) ;
+}

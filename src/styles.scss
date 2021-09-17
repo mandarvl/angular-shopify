@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("default.css") ;
+@import '~@angular/material/_theming.scss';
+@include mat-core();
+
+$primary: mat-palette($mat-deep-purple, 600, 500, 900);
+$accent: mat-palette($mat-amber, A400, A300, A600);
+
+
+.color-primary {
+  color: mat-color($primary)!important;
+}
+
+.color-accent {
+  color: mat-color($accent)!important;
+}

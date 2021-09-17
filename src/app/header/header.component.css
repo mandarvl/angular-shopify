@@ -1,0 +1,36 @@
+.logo{
+    margin-right: 4em;
+    padding: 5px 10px;
+}
+
+.sticky{
+    position: sticky ;
+    top: 0 ;
+    z-index: 99 ;
+}
+
+#menu ul{
+    list-style: none;
+    margin: 0 ;
+    padding: 0 ;
+    display: flex;
+    align-items: center;
+}
+
+#menu ul li a{
+    display: inline-block ;
+    width: 100%;
+    padding: 8px 10px;
+    text-decoration: none ;
+    color: rgb(46, 46, 46) ;
+    font-size: 14px ;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+#menu ul li a:hover{
+    color: #673ab7 ;
+}
