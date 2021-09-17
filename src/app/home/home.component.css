@@ -41,6 +41,10 @@ section{
     font-weight: 700 ;
 }
 
+section h4{
+    font-weight: 700 ;
+}
+
 .articles{
     display: grid ;
     grid-gap: 1.2em ;

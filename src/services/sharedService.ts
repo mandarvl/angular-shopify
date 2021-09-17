@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 export class SharedService {
 
     addToCart!: Function;
+    getCardItemCount!: Function ;
 
     constructor() { }
 }

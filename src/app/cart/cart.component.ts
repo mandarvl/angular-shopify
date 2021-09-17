@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import Food from 'src/types/food';
 import {FoodService} from '../../services/foodService' ;
 import {SharedService} from '../../services/sharedService' ;
@@ -12,13 +13,22 @@ interface ICartFood extends Food{
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   @Input() selectedFoods:ICartFood[] = [] ;
-  constructor(private foodService:FoodService, private sharedService:SharedService) {
+  constructor(private foodService:FoodService, private sharedService:SharedService, private snackBar: MatSnackBar) {
     this.sharedService.addToCart = this.addToCart.bind(this) ;
+    this.sharedService.getCardItemCount = this.getCardItemCount.bind(this) ;
   }
 
-  ngOnInit(): void {
+  openSnackBar(message: string) {
+    this.snackBar.open(message, undefined, {
+      duration: 3000,
+      verticalPosition: "top"
+    });
+  }
+
+  getCardItemCount(){
+    return this.selectedFoods.length ;
   }
 
   addToCart(id: number){
@@ -32,14 +42,14 @@ export class CartComponent implements OnInit {
         this.increaseQuantity(selectedIndex) ;
       }
       
-      alert("Elément ajouté au panier!") ;
+      this.openSnackBar("Elément ajouté au panier!") ;
+    }else{
+      this.openSnackBar("Une erreur s'est produite, veuillez réessayer.") ;
     }
   }
 
   removeItem(index: number){
-    console.log(index) ;
     this.selectedFoods.splice(index, 1) ;
-    console.log(this.selectedFoods) ;
   }
 
   increaseQuantity(index: number){

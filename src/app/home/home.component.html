@@ -3,7 +3,7 @@
         <h1>Shopify</h1>
         <p>Commander les nourritures préparés par des chefs professionnels.<br/>Cela peut se faire en une minute sans vous déplacer.</p>
         <div class="marge">
-            <button mat-flat-button color="accent">Commander maintenant</button>
+            <button mat-flat-button color="accent" (click)="scrollTo('list')">Commander maintenant</button>
         </div>
     </div>
 </div>
@@ -37,7 +37,7 @@
     </div>
 </section>
 <section>
-    <h1 class="section-titre color-primary">Les plus commandés</h1>
+    <h1 class="section-titre color-primary" id="list">Les plus commandés</h1>
     <div class="articles">
         <div class="modele-article"  *ngFor="let item of homeListFood">
             <app-card-food [currentFood]="item"></app-card-food>

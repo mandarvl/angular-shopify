@@ -12,6 +12,11 @@ export class HomeComponent implements OnInit {
     this.homeListFood = this.foodService.listFood ;
   }
 
+  scrollTo(id:string): void{
+    let el = document.getElementById(id);
+    el?.scrollIntoView({behavior: 'smooth'});
+  }
+
   ngOnInit(): void {
     
   }

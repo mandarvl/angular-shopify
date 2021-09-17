@@ -9,6 +9,6 @@
         </ul>
     </nav>
     <span class="flex-spacer"></span>
-    <button mat-button (click)="openCart()"><mat-icon aria-hidden="false" aria-label="Panier">add_shopping_cart</mat-icon></button>
+    <button mat-icon-button (click)="openCart()" [matBadge]="getCartItemCount()" matBadgePosition="after" matBadgeColor="accent"><mat-icon aria-hidden="false" aria-label="Panier">add_shopping_cart</mat-icon></button>
 
 </mat-toolbar>
