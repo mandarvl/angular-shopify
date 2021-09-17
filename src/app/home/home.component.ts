@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import FoodService from '../../services/foodService' ;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [FoodService]
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  @Input() homeListFood: any[] = [] ;
+  constructor(private foodService:FoodService) { 
+    this.homeListFood = this.foodService.listFood ;
+  }
 
   ngOnInit(): void {
+    
   }
 
 }
