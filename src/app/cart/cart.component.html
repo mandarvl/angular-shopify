@@ -4,7 +4,7 @@
     </div>
     <div class="item" *ngFor="let item of selectedFoods ; let i = index ;">
         <div class="buttons">
-            <span class="delete-btn">x</span>
+            <button (click)="removeItem(i)" class="delete-btn"><mat-icon aria-hidden="true">close</mat-icon></button>
         </div>
 
         <div class="image">
@@ -26,6 +26,9 @@
             </button>
         </div>
 
-        <div class="total-price">{{ item.quantite * item.prix }}</div>
+        <div class="total-price">{{ item.quantite * item.prix }} Ar</div>
+    </div>
+    <div class="empty" *ngIf="selectedFoods.length == 0">
+        <p>Aucun élément ajouté au panier.</p>
     </div>
 </div>

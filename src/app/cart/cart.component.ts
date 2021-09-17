@@ -21,12 +21,25 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public addToCart(id: number){
+  addToCart(id: number){
     let selected = this.foodService.getFoodById(id) ;
     if(selected != undefined && selected != null){
-      this.selectedFoods.unshift({...selected, quantite: 1}) ;
-      alert("Elément ajouté au panier") ;
+      let selectedIndex = this.selectedFoods.findIndex(x => x.id == selected?.id) ;
+      if(selectedIndex == -1){
+        this.selectedFoods.unshift({...selected, quantite: 1}) ;
+      }else{
+        console.log("Efa misy") ;
+        this.increaseQuantity(selectedIndex) ;
+      }
+      
+      alert("Elément ajouté au panier!") ;
     }
+  }
+
+  removeItem(index: number){
+    console.log(index) ;
+    this.selectedFoods.splice(index, 1) ;
+    console.log(this.selectedFoods) ;
   }
 
   increaseQuantity(index: number){

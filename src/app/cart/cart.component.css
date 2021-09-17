@@ -38,7 +38,8 @@
 }
 .delete-btn {
     display: inline-block;
-    Cursor: pointer;
+    cursor: pointer;
+    background-color: transparent!important;
 }
 
 .delete-btn {
@@ -135,4 +136,12 @@ input:focus {
     .buttons {
         margin-right: 20px;
     }
+}
+
+.empty{
+    padding: 15px;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    color: #5E6977 ;
 }
