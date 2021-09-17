@@ -12,6 +12,6 @@
         </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Ajouter au panier</button>
+      <button mat-button (click)="addToCart(currentFood.id)">Ajouter au panier</button>
     </mat-card-actions>
 </mat-card>

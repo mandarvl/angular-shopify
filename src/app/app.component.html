@@ -1,2 +1,9 @@
-<app-header></app-header>
-<app-home></app-home>
+<mat-drawer-container>
+    <mat-drawer #cart class="fixed-drawer" mode="over">
+        <app-cart></app-cart>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header [openCart]="cart.toggle.bind(cart)"></app-header>
+        <app-home></app-home>
+    </mat-drawer-content>
+</mat-drawer-container>

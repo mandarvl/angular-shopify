@@ -1,0 +1,31 @@
+<div class="shopping-cart">
+    <div class="title">
+        Panier
+    </div>
+    <div class="item" *ngFor="let item of selectedFoods ; let i = index ;">
+        <div class="buttons">
+            <span class="delete-btn">x</span>
+        </div>
+
+        <div class="image">
+            <img src={{item.lienImage}} alt="Pizza" />
+        </div>
+
+        <div class="description">
+            <span>{{ item.nom }}</span>
+            <span>{{ item.categorie }}</span>
+        </div>
+
+        <div class="quantity">
+            <button class="minus-btn" (click)="decreaseQuantity(i)" type="button" name="button">
+                -
+            </button>
+            <input type="text" name="name" [(ngModel)]="item.quantite" />
+            <button class="plus-btn" (click)="increaseQuantity(i)" type="button" name="button">
+                +
+            </button>
+        </div>
+
+        <div class="total-price">{{ item.quantite * item.prix }}</div>
+    </div>
+</div>

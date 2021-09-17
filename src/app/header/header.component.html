@@ -1,4 +1,4 @@
-<mat-toolbar class="sticky">
+<mat-toolbar class="fixed-header">
     <span class="logo color-primary">Shopify</span>
     <nav id="menu">
         <ul>
@@ -9,6 +9,6 @@
         </ul>
     </nav>
     <span class="flex-spacer"></span>
-    <mat-icon aria-hidden="false" aria-label="Panier">add_shopping_cart</mat-icon>
+    <button mat-button (click)="openCart()"><mat-icon aria-hidden="false" aria-label="Panier">add_shopping_cart</mat-icon></button>
 
 </mat-toolbar>

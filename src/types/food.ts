@@ -4,4 +4,5 @@ export default interface Food{
     categorie: string,
     lienImage: string,
     description: string,
+    prix: number
 }

@@ -1,11 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-interface Food{
-  nom: string,
-  categorie: string,
-  lienImage: string,
-  description: string
-}
+import { SharedService } from '../../services/sharedService' ;
+import Food from '../../types/food' ;
 
 @Component({
   selector: 'app-card-food',
@@ -15,9 +10,15 @@ interface Food{
 
 export class CardFoodComponent implements OnInit {
   @Input() currentFood!:Food ;
-  constructor() { }
+  @Input() addToCart(id: number){
+    if(this.sharedService.addToCart != undefined)
+      this.sharedService.addToCart(id) ;
+    console.log(this.sharedService.addToCart) ; 
+  }
+  constructor(private sharedService:SharedService) { }
 
   ngOnInit(): void {
+
   }
 
 }
