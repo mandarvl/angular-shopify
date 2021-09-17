@@ -1,12 +1,14 @@
 <mat-card class="list-card">
     <mat-card-header>
-        <mat-card-title>Pain au chocolat</mat-card-title>
-        <mat-card-subtitle>Viennoiserie</mat-card-subtitle>
+        <mat-card-title>{{currentFood.nom}}</mat-card-title>
+        <mat-card-subtitle>{{currentFood.categorie}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://file1.topsante.com/var/topsante/storage/images/media/images/galeries/le-pain-au-chocolat-taille-xxs/8660448-1-fre-FR/Le-pain-au-chocolat-Taille-xxs.jpg?alias=width1024" alt="photo">
+    <div class="card-mask">
+        <img mat-card-image src={{currentFood.lienImage}} alt="photo">
+    </div>
     <mat-card-content>
         <p>
-            Pain au chocolat tena tsara be, mahavoky tsara sady misy calcium, vitamine.
+            {{currentFood.description}}
         </p>
     </mat-card-content>
     <mat-card-actions>
